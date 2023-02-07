@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
+@ComponentScan(basePackageClasses=LoginController.class)
 public class AuthServerApplication {
 
 	public static void main(String[] args) {
