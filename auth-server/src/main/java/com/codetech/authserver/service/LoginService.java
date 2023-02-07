@@ -51,7 +51,7 @@ public class LoginService {
 		
 		HttpEntity<MultiValueMap<String, String>> httpEntity = new HttpEntity<>(map,headers);
 		
-		ResponseEntity<LoginResponse> response = restTemplate.postForEntity("http://localhost:8180/auth/realms/auth-realm/protocol/openid-connect/token", httpEntity, LoginResponse.class);
+		ResponseEntity<LoginResponse> response = restTemplate.postForEntity("https://keycloak-murasalaat.murasalat-fra02-b3c-4x16-07ce945275633aac826df299d779a0c3-0000.eu-de.containers.appdomain.cloud/auth/realms/auth-realm/protocol/openid-connect/token", httpEntity, LoginResponse.class);
 		return new ResponseEntity<>(response.getBody(),HttpStatus.OK);
 	
 		
@@ -70,7 +70,7 @@ public class LoginService {
 		
 		HttpEntity<MultiValueMap<String, String>> httpEntity = new HttpEntity<>(map,headers);
 		
-		ResponseEntity<Response> response = restTemplate.postForEntity("http://localhost:8180/auth/realms/auth-realm/protocol/openid-connect/logout", httpEntity, Response.class);
+		ResponseEntity<Response> response = restTemplate.postForEntity("https://keycloak-murasalaat.murasalat-fra02-b3c-4x16-07ce945275633aac826df299d779a0c3-0000.eu-de.containers.appdomain.cloud/auth/realms/auth-realm/protocol/openid-connect/logout", httpEntity, Response.class);
 		
 		Response res = new Response();
 		if(response.getStatusCode().is2xxSuccessful()) {
@@ -94,7 +94,7 @@ public class LoginService {
 		
 		HttpEntity<MultiValueMap<String, String>> httpEntity = new HttpEntity<>(map,headers);
 		
-		ResponseEntity<IntrospectResponse> response = restTemplate.postForEntity("http://localhost:8180/auth/realms/auth-realm/protocol/openid-connect/token/introspect", httpEntity, IntrospectResponse.class);
+		ResponseEntity<IntrospectResponse> response = restTemplate.postForEntity("https://keycloak-murasalaat.murasalat-fra02-b3c-4x16-07ce945275633aac826df299d779a0c3-0000.eu-de.containers.appdomain.cloud/auth/realms/auth-realm/protocol/openid-connect/token/introspect", httpEntity, IntrospectResponse.class);
 		return new ResponseEntity<>(response.getBody(),HttpStatus.OK);
 	}
 	
