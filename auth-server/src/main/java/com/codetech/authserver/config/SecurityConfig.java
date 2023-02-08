@@ -36,7 +36,8 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 	
 		super.configure(http);
-		http.csrf().disable().authorizeRequests().antMatchers("/ping").permitAll();
+		http.csrf().disable().authorizeRequests().antMatchers("/ping").hasRole("user")
+			                .anyRequest().permitAll();
 	}
 
 }
