@@ -1,7 +1,7 @@
 package com.codetech.authserver.model;
 
 public class TokenRequest {
-	
+/*	
 	private String token;
 
 	public String getToken() {
@@ -12,6 +12,6 @@ public class TokenRequest {
 		this.token = token;
 	}
 	
-	
+*/	
 
 }

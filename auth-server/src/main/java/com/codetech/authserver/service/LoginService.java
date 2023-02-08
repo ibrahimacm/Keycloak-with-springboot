@@ -13,15 +13,17 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+/*
 import com.codetech.authserver.model.IntrospectResponse;
 import com.codetech.authserver.model.LoginRequest;
 import com.codetech.authserver.model.LoginResponse;
 import com.codetech.authserver.model.Response;
 import com.codetech.authserver.model.TokenRequest;
+*/
 
 @Service
 public class LoginService {
-	
+/*	
 	@Autowired
 	RestTemplate restTemplate;
 	
@@ -99,5 +101,5 @@ public class LoginService {
 	}
 	
 	
-
+*/
 }

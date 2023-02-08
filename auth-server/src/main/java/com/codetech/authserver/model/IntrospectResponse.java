@@ -1,7 +1,7 @@
 package com.codetech.authserver.model;
 
 public class IntrospectResponse {
-
+/*
 	private Boolean active;
 
 	public Boolean getActive() {
@@ -11,4 +11,5 @@ public class IntrospectResponse {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
+*/
 }
