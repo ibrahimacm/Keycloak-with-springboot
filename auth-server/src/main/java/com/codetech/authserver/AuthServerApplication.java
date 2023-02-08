@@ -5,9 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
+import com.codetech.authserver.controller.LoginController;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses=LoginController.class)
+@ComponentScan(basePackageClasses = LoginController.class)
 public class AuthServerApplication {
 
 	public static void main(String[] args) {
