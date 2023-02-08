@@ -13,6 +13,7 @@ import com.codetech.authserver.model.LoginResponse;
 import com.codetech.authserver.model.Response;
 import com.codetech.authserver.model.TokenRequest;
 import com.codetech.authserver.service.LoginService;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/auth")
@@ -22,7 +23,7 @@ public class LoginController {
 	@Autowired
 	LoginService loginservice;
 	
-	@PostMapping("/login")
+	@GetMapping("/login")
 	public ResponseEntity<LoginResponse> login (@RequestBody LoginRequest loginrequest) {
 		return loginservice.login(loginrequest);
 		
@@ -30,14 +31,19 @@ public class LoginController {
 		
 	}
 	
-	@PostMapping("/logout")
+	@GetMapping("/logout")
 	public ResponseEntity<Response> logout (@RequestBody TokenRequest token) {
 		return loginservice.logout(token);
 	}
 	
-	@PostMapping("/introspect")
+	@GetMapping("/introspect")
 	public ResponseEntity<IntrospectResponse> introspect(@RequestBody TokenRequest token) {
 		return loginservice.introspect(token);
+	}
+
+	@GetMapping(path = "/ping")
+	public String getProducts(){
+		return "products";
 	}
 
 }
