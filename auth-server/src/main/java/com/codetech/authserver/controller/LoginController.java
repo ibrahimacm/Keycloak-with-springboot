@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RestController
 public class LoginController {
 	
-	
+/*	
 	@Autowired
 	LoginService loginservice;
 	
@@ -40,6 +40,8 @@ public class LoginController {
 		return loginservice.introspect(token);
 	}
 
+
+*/
 	@GetMapping(path = "/ping")
 	public String getProducts(){
 		return "products";
