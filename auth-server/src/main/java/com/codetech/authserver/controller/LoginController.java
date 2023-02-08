@@ -16,7 +16,6 @@ import com.codetech.authserver.service.LoginService;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
-@RequestMapping("/auth")
 public class LoginController {
 	
 	
