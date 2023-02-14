@@ -52,8 +52,4 @@ public class LoginController {
 		return "products";
 	}
 	
-	@RequestMapping("/home")
-	public String homePage() {
-		return "home";
-	}
 }
