@@ -56,7 +56,7 @@ public class LoginController {
                 return "home";
 	}
 	@GetMapping(path = "/testtt")
-        public String getProductss(){
+        public String getProductsss(){
 	        return "home.jsp";
 	}
 
