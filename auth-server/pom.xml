@@ -93,7 +93,8 @@
 	        <plugin>
 	          <artifactId>maven-war-plugin</artifactId>
 	          <configuration>
-	            <warName>deployments</warName>
+		    <outputDirectory>deployments</outputDirectory>
+	            <warName>testwarfile</warName>
 	          </configuration>
 	         </plugin>
 	      </plugins>
