@@ -93,7 +93,7 @@
 	        <plugin>
 	          <artifactId>maven-war-plugin</artifactId>
 	          <configuration>
-		    <outputDirectory>deployments</outputDirectory>
+		    <outputDirectory>target</outputDirectory>
 	            <warName>ROOT</warName>
 	          </configuration>
 	         </plugin>
