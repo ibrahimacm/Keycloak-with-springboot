@@ -1,5 +1,7 @@
 package com.codetech.authserver.controller;
 
+import org.springframework.stereotype.Controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -49,5 +51,9 @@ public class LoginController {
 	public String getProducts(){
 		return "products";
 	}
-
+	
+	@RequestMapping("/home")
+	public String homePage() {
+		return "home";
+	}
 }
