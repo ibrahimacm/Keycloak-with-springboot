@@ -11,6 +11,7 @@
 	<groupId>com.codetech</groupId>
 	<artifactId>auth-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>auth-server</name>
 	<description>Auth with keycloak</description>
 	<properties>
@@ -103,6 +104,9 @@
 	      <plugins>
 	        <plugin>
 	          <artifactId>maven-war-plugin</artifactId>
+		  <configuration>
+			  <outputDirectory>target</outputDirectory>
+		  </configuration>
 	         </plugin>
 	      </plugins>
             </build>
