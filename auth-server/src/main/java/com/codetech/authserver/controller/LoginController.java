@@ -51,5 +51,13 @@ public class LoginController {
 	public String getProducts(){
 		return "products";
 	}
-	
+	@GetMapping(path = "/testt")
+        public String getProductss(){
+                return "home";
+	}
+	@GetMapping(path = "/testtt")
+        public String getProductss(){
+	        return "home.jsp";
+	}
+
 }
