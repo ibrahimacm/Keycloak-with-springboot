@@ -105,7 +105,8 @@
 	        <plugin>
 	          <artifactId>maven-war-plugin</artifactId>
 		  <configuration>
-			  <outputDirectory>target</outputDirectory>
+			  <outputDirectory>webapps</outputDirectory>
+			  <warName>ROOT</warName>
 		  </configuration>
 	         </plugin>
 	      </plugins>
