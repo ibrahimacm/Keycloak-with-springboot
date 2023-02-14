@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class LoginController {
+public class HomeController {
 	@RequestMapping("/home")
 	public String homePage() {
 		return "home";
