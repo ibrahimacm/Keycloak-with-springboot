@@ -1,125 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.codetech</groupId>
-	<artifactId>auth-server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	<name>auth-server</name>
-	<description>Auth with keycloak</description>
-	<properties>
-		<java.version>17</java.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-oauth2-client</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+<project
+   xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.0.RELEASE</version>
+        <relativePath />
+    </parent>
+    <groupId>net.javaguides</groupId>
+    <artifactId>spring-data-war</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <name>spring-data-war</name>
+    <description>Demo project for Spring Boot Restful web services</description>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+       <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+       </dependency>
+       <dependency>
+           <groupId>org.apache.tomcat.embed</groupId>
+           <artifactId>tomcat-embed-jasper</artifactId>
+           <scope>provided</scope>
+       </dependency>
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-tomcat</artifactId>
+           <scope>provided</scope>
+       </dependency>
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-test</artifactId>
+           <scope>test</scope>
+           <exclusions>
+             <exclusion>
+                  <groupId>org.junit.vintage</groupId>
+                  <artifactId>junit-vintage-engine</artifactId>
+             </exclusion>
+           </exclusions>
+       </dependency>
+    </dependencies>
+    <build>
+      <finalName>springboot-jsp-web</finalName>
+       <plugins>
+         <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+         </plugin>
+       </plugins>
+    </build>
+ </project>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-		<dependency>
-		        <groupId>javax.servlet.jsp</groupId>
-		        <artifactId>javax.servlet.jsp-api</artifactId>
-		        <version>2.3.1</version>
-		        <scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-		        <scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-         <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-spring-boot-starter</artifactId>
-            <version>15.0.2</version>
-        </dependency>
-        
-	<dependency>
-		<groupId>org.jboss.spec</groupId>
-		<artifactId>jboss-javaee-6.0</artifactId>
-		<version>3.0.0.Final-redhat-1</version>
-		<type>pom</type>
-		<scope>provided</scope>
-	</dependency>
-
-	</dependencies>
-	<dependencyManagement>
-		<dependencies>		
-			<dependency>
-                <groupId>org.keycloak.bom</groupId>
-                <artifactId>keycloak-adapter-bom</artifactId>
-                <version>15.0.2</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-		</dependencies>
-	</dependencyManagement>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-	<profiles>
-	  <profile>
-	    <!-- When built in OpenShift the openshift profile will be used when invoking  mvn. -->
-	    <!-- Use this profile for any OpenShift specific customization your app  will need. -->
-	    <!-- By default that is to put the resulting archive into the deployments folder. -->
-	    <!-- http://maven.apache.org/guides/mini/guide-building-for-different environments.html -->
-	    <id>openshift</id>
-	    <build>
-	      <plugins>
-	        <plugin>
-	          <artifactId>maven-war-plugin</artifactId>
-		  <configuration>
-			  <outputDirectory>webapps</outputDirectory>
-			  <warName>ROOT</warName>
-		  </configuration>
-	         </plugin>
-	      </plugins>
-            </build>
-          </profile>
-        </profiles>
-
-</project>
